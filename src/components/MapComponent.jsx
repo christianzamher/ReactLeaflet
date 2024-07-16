@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Marker, Popup, useMapEvents, useMap } from "react-leaflet";
+import { Marker, Popup, useMapEvents } from "react-leaflet";
 
 import "leaflet-routing-machine";
 

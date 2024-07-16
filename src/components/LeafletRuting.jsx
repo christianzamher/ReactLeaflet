@@ -11,7 +11,7 @@ export const LeafletRouting = () => {
     const routingControl = new L.Routing.Control({
       waypoints: [
         L.latLng(-34.6047, -58.3995),
-        L.latLng(-34.6036, -58.3985), // Cambia estos valores según sea necesario
+        L.latLng(-34.6036, -58.3985),
       ],
       routeWhileDragging: true,
       geocoder: L.Control.Geocoder.nominatim(),
