@@ -9,6 +9,9 @@
 .leaflet-routing-geocoder{
     background-color: white;
 }
+.leaflet-routing-alternatives-container{
+display: none;
+}
 
 .leaflet-control-container .leaflet-routing-container-hide {
      width: 32px;
