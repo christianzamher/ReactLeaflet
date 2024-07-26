@@ -13,7 +13,6 @@ import "leaflet/dist/leaflet.css";
 import { MapComponent } from "./MapComponent";
 import { LeafletRouting } from "./LeafletRuting";
 import { Markers } from "./Markers";
-
 import "leaflet-routing-machine";
 
 export const RoutePlanner = () => {
@@ -57,9 +56,16 @@ export const RoutePlanner = () => {
     }
   }, [dispatch]);
 
+   // create custom icon
+   const customIcon = new Icon({
+    iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png",
+
+    iconSize: [38, 38], // size of the icon
+  });
+
   return (
     <>
-      <MapContainer center={startLocation} zoom={13}>
+      <MapContainer  center={startLocation} zoom={13} icon={ customIcon }>
         <LeafletRouting
           onReceiveWaypoints={handleReceiveWaypoints}
           onRouteFound={handleRouteFound}
