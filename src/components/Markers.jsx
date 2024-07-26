@@ -1,5 +1,4 @@
-
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Marker, Popup, useMapEvents } from "react-leaflet";
 import axios from "axios";
 import { Icon } from "leaflet";
@@ -11,7 +10,12 @@ export const Markers = () => {
       .get(dataMarkers)
       .then((response) => {
         const dataRes = response.data;
-        const filteredData = dataRes.filter(marker => marker.location && Array.isArray(marker.location) && marker.location.length === 2);
+        const filteredData = dataRes.filter(
+          (marker) =>
+            marker.location &&
+            Array.isArray(marker.location) &&
+            marker.location.length === 2
+        );
         setMarkers(filteredData);
       })
       .catch((error) => {
@@ -21,15 +25,20 @@ export const Markers = () => {
 
   // create custom icon
   const customIcon = new Icon({
-    iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png",
+    iconUrl: "srcassetsplaceholder.png",
 
     iconSize: [38, 38], // size of the icon
   });
   return (
     <>
-       {markers.map((marker  , id) => (
-        <Marker  key={id} position={marker.location} icon={customIcon}>
-          <Popup position={marker.location}>{marker.title }</Popup>
+      {markers.map((marker, id) => (
+        <Marker key={id} position={marker.location} icon={customIcon}>
+          <Popup position={marker.location}>{marker.title}
+          <a href="https://google.com"> + Visita nuestro sitio web</a>
+          </Popup>
+          {/* <Popup>
+            <a href="https://google.com">Visita nuestro sitio web</a>
+          </Popup> */}
         </Marker>
       ))}
     </>

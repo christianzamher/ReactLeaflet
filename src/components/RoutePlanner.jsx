@@ -56,20 +56,18 @@ export const RoutePlanner = () => {
     }
   }, [dispatch]);
 
-   // create custom icon
-   const customIcon = new Icon({
-    iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png",
+   
+  
 
-    iconSize: [38, 38], // size of the icon
-  });
 
   return (
     <>
-      <MapContainer  center={startLocation} zoom={13} icon={ customIcon }>
+      <MapContainer  center={startLocation} zoom={13} >
         <LeafletRouting
           onReceiveWaypoints={handleReceiveWaypoints}
           onRouteFound={handleRouteFound}
         />
+       
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
