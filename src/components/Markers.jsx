@@ -25,7 +25,7 @@ export const Markers = () => {
 
   // create custom icon
   const customIcon = new Icon({
-    iconUrl: "srcassetsplaceholder.png",
+    iconUrl: "src/assets/placeholder.png",
 
     iconSize: [38, 38], // size of the icon
   });
@@ -36,9 +36,7 @@ export const Markers = () => {
           <Popup position={marker.location}>{marker.title}
           <a href="https://google.com"> + Visita nuestro sitio web</a>
           </Popup>
-          {/* <Popup>
-            <a href="https://google.com">Visita nuestro sitio web</a>
-          </Popup> */}
+          
         </Marker>
       ))}
     </>
