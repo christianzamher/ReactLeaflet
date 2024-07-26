@@ -1,7 +1,7 @@
 import { Chip } from "@nextui-org/react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Landing_Page } from "./Pages/LandingPage/Landing_Page.View";
-
+import { CustomMap } from "./components/CustomMap";
 import { RoutePlanner } from "./components/RoutePlanner";
 
 
