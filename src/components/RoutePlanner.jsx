@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Icon } from "leaflet";
+import markerIconPng from "leaflet/dist/images/marker-icon.png"
+
 import { useSelector, useDispatch } from "react-redux";
 import {
   MapContainer,
@@ -70,6 +72,8 @@ export const RoutePlanner = () => {
     <>
        {/* Mapa de Leaflet */}
        <MapContainer center={startLocation} zoom={13}>
+       {/* <Marker position={[startLocation, endLocation]} icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})} /> */}
+      
         <LeafletRouting
           onReceiveWaypoints={handleReceiveWaypoints}
           onRouteFound={handleRouteFound}

@@ -13,11 +13,11 @@ export const LeafletRouting = ({ onReceiveWaypoints, onRouteFound }) => {
 
   useEffect(() => {
     const routingControl = new L.Routing.Control({
-      waypoints: [L.latLng(-34.6047, -58.3995), L.latLng(-34.6036, -58.3985)],
+      waypoints: [L.latLng([]), L.latLng([])],
       lineOptions: {
         styles: [
           {
-            color: "blue",
+            color: "orange",
             opacity: 1,
             weight: 5,
           },
