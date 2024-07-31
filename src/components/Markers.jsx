@@ -21,6 +21,8 @@ export const Markers = () => {
       .catch((error) => {
         console.error(error);
       });
+
+      
   }, [setMarkers]);
 
   // create custom icon

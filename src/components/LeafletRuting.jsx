@@ -12,6 +12,7 @@ export const LeafletRouting = ({ onReceiveWaypoints, onRouteFound }) => {
   const map = useMap();
   const controlRef = useRef(null);
   const [waypoints, setWaypoints] = useState([]);
+  console.log(waypoints);
   const [intermediatePoints, setIntermediatePoints] = useState([]);
   const [totalDistance, setTotalDistance] = useState(0);
 
