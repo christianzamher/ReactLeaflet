@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Icon } from "leaflet";
-import markerIconPng from "leaflet/dist/images/marker-icon.png"
-
+import markerIconPng from "leaflet/dist/images/marker-icon.png";
+import { useMap } from "react-leaflet";
 import { useSelector, useDispatch } from "react-redux";
 import {
   MapContainer,
@@ -11,11 +11,15 @@ import {
   Popup,
 } from "react-leaflet";
 import { setStartLocation, setEndLocation } from "../store/routeSlice";
-import "leaflet/dist/leaflet.css";
+
 import { MapComponent } from "./MapComponent";
 import { LeafletRouting } from "./LeafletRuting";
 import { Markers } from "./Markers";
 import "leaflet-routing-machine";
+import 'leaflet/dist/leaflet.css';
+import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
+import * as L from 'leaflet';
+// import 'leaflet-defaulticon-compatibility';
 
 export const RoutePlanner = () => {
   //Geolocalizacion:
@@ -58,33 +62,9 @@ export const RoutePlanner = () => {
     }
   }, [dispatch]);
 
-  const startIcon = L.icon({
-    iconUrl: 'src/assets/placeholder.png', // Cambia esto por la ruta de tu imagen
-    iconSize: [25, 41], // Tamaño del icono
-  });
-  
-  const endIcon = L.icon({
-    iconUrl: 'src/assets/placeholder.png', // Cambia esto por la ruta de tu imagen
-    iconSize: [25, 41], // Tamaño del icono
-  });
-
+ 
   return (
     <>
-       {/* Mapa de Leaflet */}
-       <MapContainer center={startLocation} zoom={13}>
-       {/* <Marker position={[startLocation, endLocation]} icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})} /> */}
-      
-        <LeafletRouting
-          onReceiveWaypoints={handleReceiveWaypoints}
-          onRouteFound={handleRouteFound}
-        />
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        />
-        <MapComponent center={startLocation} />
-        <Markers />
-      </MapContainer>
       {/* Renderiza los waypoints */}
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="grid gap-6 row-gap-10 lg:grid-cols-2">
@@ -103,6 +83,22 @@ export const RoutePlanner = () => {
                 </div>
               </div>
             ))}
+
+            {/* Mapa de Leaflet */}
+            <MapContainer center={startLocation} zoom={13}>
+              
+
+              <LeafletRouting
+                onReceiveWaypoints={handleReceiveWaypoints}
+                onRouteFound={handleRouteFound}
+              />
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              />
+              <MapComponent center={startLocation} />
+              <Markers />
+            </MapContainer>
 
             {/* Información de Ruta  */}
             <h2 className="text-xl font-semibold mb-4">Información de Ruta</h2>

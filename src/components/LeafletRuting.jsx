@@ -3,6 +3,10 @@ import { useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet-routing-machine";
 import "leaflet-control-geocoder";
+import 'leaflet/dist/leaflet.css';
+//import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
+// import * as L from 'leaflet';
+//import 'leaflet-defaulticon-compatibility';
 
 export const LeafletRouting = ({ onReceiveWaypoints, onRouteFound }) => {
   const map = useMap();
