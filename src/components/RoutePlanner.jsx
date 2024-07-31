@@ -17,9 +17,13 @@ import { LeafletRouting } from "./LeafletRuting";
 import { Markers } from "./Markers";
 import "leaflet-routing-machine";
 import 'leaflet/dist/leaflet.css';
-import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
-import * as L from 'leaflet';
-// import 'leaflet-defaulticon-compatibility';
+// import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
+import  L from 'leaflet';
+
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+
+
 
 export const RoutePlanner = () => {
   //Geolocalizacion:
@@ -41,6 +45,9 @@ export const RoutePlanner = () => {
     setRouteInfo({ distance, intermediatePoints, instructions }); // Almacenamos las instrucciones también
   };
 
+
+
+
   //useEffect para ubicar al usuario en la geolocalizcion actual
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -60,6 +67,13 @@ export const RoutePlanner = () => {
     } else {
       console.error("Geolocalización no disponible");
     }
+
+    let DefaultIcon = L.icon({
+      iconUrl: icon,
+      shadowUrl: iconShadow
+  });
+  
+  L.Marker.prototype.options.icon = DefaultIcon;
   }, [dispatch]);
 
  
@@ -86,7 +100,7 @@ export const RoutePlanner = () => {
 
             {/* Mapa de Leaflet */}
             <MapContainer center={startLocation} zoom={13}>
-              
+              <Marker position={[0,0]}/>
 
               <LeafletRouting
                 onReceiveWaypoints={handleReceiveWaypoints}
