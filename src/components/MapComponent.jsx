@@ -7,18 +7,19 @@ export const MapComponent = ({ center }) => {
   const [position, setPosition] = useState(null);
 
   const map = useMapEvents({
-    click() {
+    dblclick() {
       map.locate();
     },
     locationfound(e) {
       setPosition(e.latlng);
       map.flyTo(e.latlng, map.getZoom());
+      console.log( 'location found  : ',  e)
     },
   });
 
   return position === null ? null : (
     <Marker position={position}>
-      <Popup>You are here</Popup>
+      <Popup>You are here: </Popup>
     </Marker>
   );
 };

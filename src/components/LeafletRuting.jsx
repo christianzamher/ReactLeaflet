@@ -3,16 +3,17 @@ import { useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet-routing-machine";
 import "leaflet-control-geocoder";
-import 'leaflet/dist/leaflet.css';
-//import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
-// import * as L from 'leaflet';
-//import 'leaflet-defaulticon-compatibility';
+import "leaflet/dist/leaflet.css";
 
-export const LeafletRouting = ({ onReceiveWaypoints, onRouteFound }) => {
+export const LeafletRouting = ({
+  onReceiveWaypoints,
+  onRouteFound,
+  onRoutingControlReady,
+}) => {
   const map = useMap();
   const controlRef = useRef(null);
   const [waypoints, setWaypoints] = useState([]);
-  console.log(waypoints);
+
   const [intermediatePoints, setIntermediatePoints] = useState([]);
   const [totalDistance, setTotalDistance] = useState(0);
 
@@ -22,25 +23,31 @@ export const LeafletRouting = ({ onReceiveWaypoints, onRouteFound }) => {
       lineOptions: {
         styles: [
           {
-            color: "orange",
+            color: "red",
             opacity: 1,
             weight: 5,
           },
         ],
       },
       routeWhileDragging: true,
-      show: true,
+      // show: true,
       addWaypoints: true,
       draggableWaypoints: true,
       fitSelectedRoutes: true,
       showAlternatives: true,
+
+      language: "es",
+      reverseWaypoints: true,
+
       geocoder: L.Control.Geocoder.nominatim(),
     }).addTo(map);
+    console.log(routingControl);
 
     controlRef.current = routingControl;
-
+    onRoutingControlReady(routingControl);
     // Acceso a la información de las rutas
     const waypointsFromControl = routingControl.getWaypoints();
+    console.log(waypoints);
 
     setWaypoints(waypointsFromControl); // Actualiza el estado con los waypoints obtenidos
     onReceiveWaypoints(waypointsFromControl);
@@ -61,6 +68,7 @@ export const LeafletRouting = ({ onReceiveWaypoints, onRouteFound }) => {
       // Llamamos a onRouteFound pasando las instrucciones
       onRouteFound({ distance, intermediatePoints, instructions });
     });
+    console.log(waypointsFromControl);
 
     return () => {
       if (controlRef.current) {
