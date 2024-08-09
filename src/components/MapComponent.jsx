@@ -17,9 +17,13 @@ export const MapComponent = ({ center }) => {
     },
   });
 
+  const formatLatLng = (latlng) => {
+    return `${latlng.lat.toFixed(4)}, ${latlng.lng.toFixed(4)}`;
+  };
+
   return position === null ? null : (
     <Marker position={position}>
-      <Popup>You are here: </Popup>
+      <Popup>You are here: {formatLatLng(position)} </Popup>
     </Marker>
   );
 };

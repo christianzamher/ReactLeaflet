@@ -118,7 +118,7 @@ export const RoutePlanner = () => {
                     <br />
                     {instruction.text}
                     <br />
-                    {instruction.time}
+                    {instruction.time} Minutos
                   </div>
                 </li>
               ))}
