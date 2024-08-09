@@ -23,7 +23,6 @@ export const RoutePlanner = () => {
     instructions: [],
   });
   const [routingControl, setRoutingControl] = useState(null);
- 
 
   console.log(routeInfo);
 
@@ -65,25 +64,21 @@ export const RoutePlanner = () => {
 
   return (
     <>
-    {/* Mapa de Leaflet */}
-            <MapContainer center={startLocation} zoom={13}>
-              <Marker position={[0, 0]} />
-
-              <CustomMap control={routingControl} />
-
-              <LeafletRouting
-                onReceiveWaypoints={handleReceiveWaypoints}
-                onRouteFound={handleRouteFound}
-                onRoutingControlReady={(rc) => setRoutingControl(rc)}
-                
-              />
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              />
-              <MapComponent center={startLocation} />
-              <Markers />
-            </MapContainer>
+      {/* Mapa de Leaflet */}
+      <MapContainer center={startLocation} zoom={13}>
+        <CustomMap control={routingControl} />
+      <Markers/>
+        <LeafletRouting
+          onReceiveWaypoints={handleReceiveWaypoints}
+          onRouteFound={handleRouteFound}
+          onRoutingControlReady={(rc) => setRoutingControl(rc)}
+        />
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        />
+        <MapComponent center={startLocation} />
+      </MapContainer>
       {/* Renderiza los waypoints */}
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="grid gap-6 row-gap-10 lg:grid-cols-2">
@@ -103,12 +98,11 @@ export const RoutePlanner = () => {
               </div>
             ))} */}
 
-            
-
             {/* Información de Ruta  */}
             <h2 className="text-xl font-semibold mb-4">Informacion de Ruta:</h2>
             <p className="mb-2">
-              <strong>Distancia del Recorrido:</strong> {routeInfo.distance} Mts.
+              <strong>Distancia del Recorrido:</strong> {routeInfo.distance}{" "}
+              Mts.
             </p>
             <p className="mb-2">
               <strong>Puntos intermedios:</strong>
@@ -123,7 +117,7 @@ export const RoutePlanner = () => {
                     <strong>{instruction.type}</strong>
                     <br />
                     {instruction.text}
-                    <br/>
+                    <br />
                     {instruction.time}
                   </div>
                 </li>

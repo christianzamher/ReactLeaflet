@@ -30,7 +30,7 @@ export const LeafletRouting = ({
         ],
       },
       routeWhileDragging: true,
-      // show: true,
+      show: true,
       addWaypoints: true,
       draggableWaypoints: true,
       fitSelectedRoutes: true,
