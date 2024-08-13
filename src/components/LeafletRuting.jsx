@@ -35,7 +35,7 @@ export const LeafletRouting = ({
       draggableWaypoints: true,
       fitSelectedRoutes: true,
       showAlternatives: true,
-
+      collapsible: true,
       language: "es",
       reverseWaypoints: true,
 

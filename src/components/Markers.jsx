@@ -3,6 +3,8 @@ import { Marker, Popup, useMapEvents } from "react-leaflet";
 import axios from "axios";
 import { Icon } from "leaflet";
 import L from "leaflet";
+import icon from "leaflet/dist/images/placeholder.png";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
 export const Markers = () => {
   const [markers, setMarkers] = useState([]);
@@ -23,22 +25,30 @@ export const Markers = () => {
       .catch((error) => {
         console.error(error);
       });
-  }, [setMarkers]);
+      // create custom icon
+    //   const customIcon =  L.icon({
+    //     iconUrl: 'src/assets/placeholder.png',
+    //     iconSize: [38, 40],
+    //     iconAnchor: [22, 94],
+    //     popupAnchor: [-3, -76],
+    //     shadowUrl: 'src/assets/6.png',
+    //     shadowSize: [68, 95],
+    //     shadowAnchor: [22, 94]
+    // });
 
-  // create custom icon
-  const customIcon =  L.icon({
-    iconUrl: 'src/assets/placeholder.png',
-    iconSize: [38, 40],
-    // iconAnchor: [22, 94],
-    // popupAnchor: [-3, -76],
-    // shadowUrl: 'src/assets/6.png',
-    // shadowSize: [68, 95],
-    // shadowAnchor: [22, 94]
-});
+  }, [setMarkers]);
+  
+  let RestoIcon = L.icon({
+    iconUrl: icon,
+    shadowUrl: iconShadow,
+    iconSize: [38, 40]
+  });
+
+  L.Marker.prototype.options.icon = RestoIcon;
   return (
     <>
       {markers.map((marker, id) => (
-        <Marker key={id} position={marker.location} icon={customIcon}>
+        <Marker key={id} position={marker.location} icon={RestoIcon}>
           <Popup position={marker.location} closeButton={true}>
             <div className="    animated fadeIn faster    left-0  flex justify-center items-center  ">
               <div className="block rounded-lg bg-white">
