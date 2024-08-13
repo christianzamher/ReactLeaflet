@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Marker, Popup, useMapEvents } from "react-leaflet";
 import axios from "axios";
 import { Icon } from "leaflet";
-import { Link } from "react-router-dom";
-import { CustomMap } from "./CustomMap";
+import L from "leaflet";
 
 export const Markers = () => {
   const [markers, setMarkers] = useState([]);
@@ -27,11 +26,15 @@ export const Markers = () => {
   }, [setMarkers]);
 
   // create custom icon
-  const customIcon = new Icon({
-    iconUrl: "src/assets/placeholder.png",
-
-    iconSize: [38, 38], // size of the icon
-  });
+  const customIcon =  L.icon({
+    iconUrl: 'src/assets/placeholder.png',
+    iconSize: [38, 40],
+    // iconAnchor: [22, 94],
+    // popupAnchor: [-3, -76],
+    // shadowUrl: 'src/assets/6.png',
+    // shadowSize: [68, 95],
+    // shadowAnchor: [22, 94]
+});
   return (
     <>
       {markers.map((marker, id) => (

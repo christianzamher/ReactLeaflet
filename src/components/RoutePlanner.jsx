@@ -64,27 +64,12 @@ export const RoutePlanner = () => {
 
   return (
     <>
-      {/* Mapa de Leaflet */}
-      <MapContainer center={startLocation} zoom={13}>
-        <CustomMap control={routingControl} />
-      <Markers/>
-        <LeafletRouting
-          onReceiveWaypoints={handleReceiveWaypoints}
-          onRouteFound={handleRouteFound}
-          onRoutingControlReady={(rc) => setRoutingControl(rc)}
-        />
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        />
-        <MapComponent center={startLocation} />
-      </MapContainer>
       {/* Renderiza los waypoints */}
-      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      {/* <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="grid gap-6 row-gap-10 lg:grid-cols-2">
-          <div className="lg:py-6 lg:pr-16">
-            {/* Waypoints */}
-            {/* {childWaypoints.map((wp, index) => (
+          <div className="lg:py-6 lg:pr-16"> */}
+      {/* Waypoints */}
+      {/* {childWaypoints.map((wp, index) => (
               <div key={index} className="flex items-center space-x-4 mb-6">
                 <div className="flex flex-col items-center">
                   <div className="flex items-center justify-center w-10 h-10 border rounded-full bg-softWood text-white">
@@ -98,6 +83,37 @@ export const RoutePlanner = () => {
               </div>
             ))} */}
 
+      <div className="relative w-full h-screen z-50">
+        {" "}
+        {/* Contenedor principal con posición relativa y tamaño completo de la pantalla */}
+        <div className="absolute inset-0 flex flex-col md:flex-row z-20">
+          {" "}
+          {/* Contenedor interno con posición absoluta, cubriendo todo el espacio del contenedor principal, y usando flex para organizar hijos */}
+          <div className="w-full md:w-3/4 h-full z-30">
+            {" "}
+            {/* Sección del mapa, ocupando los tres cuartos del ancho y toda la altura disponible */}
+            <MapContainer
+              center={startLocation}
+              zoom={13}
+              style={{ width: "100%", height: "100%" }}
+            >
+              <CustomMap control={routingControl} />
+              <Markers />
+              <LeafletRouting
+                onReceiveWaypoints={handleReceiveWaypoints}
+                onRouteFound={handleRouteFound}
+                onRoutingControlReady={(rc) => setRoutingControl(rc)}
+              />
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              />
+              <MapComponent center={startLocation} />
+            </MapContainer>
+          </div>
+          <div className="w-full md:w-1/4 h-full overflow-y-scroll px-4 pt-24 z-10">
+            {" "}
+            {/* Sección de información de ruta, ocupando un cuarto del ancho y toda la altura disponible */}
             {/* Información de Ruta  */}
             <h2 className="text-xl font-semibold mb-4">Informacion de Ruta:</h2>
             <p className="mb-2">
@@ -109,7 +125,7 @@ export const RoutePlanner = () => {
             </p>
             <ul className="list-none pl-5">
               {routeInfo.instructions.map((instruction, index) => (
-                <li key={index} className="flex items-center space-x-2 mb-2">
+                <li key={index} className="flex items-center space-x-2 mb-2 border-b">
                   <span className="flex items-center justify-center w-10 h-10 border rounded-full bg-greenT text-white">
                     {index + 1}.
                   </span>
