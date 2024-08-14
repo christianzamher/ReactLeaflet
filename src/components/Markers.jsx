@@ -3,10 +3,8 @@ import { Marker, Popup, useMapEvents } from "react-leaflet";
 import axios from "axios";
 import { Icon } from "leaflet";
 import L from "leaflet";
-// import icon from "leaflet/dist/images/placeholder.png";
-// import iconShadow from "leaflet/dist/images/marker-shadow.png";
-import Leaflet from 'leaflet';
 
+import Leaflet from "leaflet";
 
 export const Markers = () => {
   const [markers, setMarkers] = useState([]);
@@ -27,21 +25,18 @@ export const Markers = () => {
       .catch((error) => {
         console.error(error);
       });
-//  Leaflet.Icon.Default.imagePath = '/images/'
-
   }, [setMarkers]);
-  
-  //  const icon = L.icon({ 
-  //    iconUrl: "src/assets/6copia.png",
-  //    iconSize: [38, 40]
-  //  });
-  
 
-  // L.Marker.prototype.options.icon = icon;
+   const icon = L.icon({
+     iconUrl: "src/assets/6copia.png",
+     iconSize: [38, 40]
+   });
+
+  L.Marker.prototype.options.icon = icon;
   return (
     <>
       {markers.map((marker, id) => (
-        <Marker key={id} position={marker.location} >
+        <Marker key={id} position={marker.location} icon={icon}>
           <Popup position={marker.location} closeButton={true}>
             <div className="    animated fadeIn faster    left-0  flex justify-center items-center  ">
               <div className="block rounded-lg bg-white">
