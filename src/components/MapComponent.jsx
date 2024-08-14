@@ -23,7 +23,7 @@ export const MapComponent = ({ center }) => {
 
   return position === null ? null : (
     <Marker position={position}>
-      <Popup>You are here: {formatLatLng(position)} </Popup>
+      <Popup>Estas Aqui: {formatLatLng(position)} </Popup>
     </Marker>
   );
 };
