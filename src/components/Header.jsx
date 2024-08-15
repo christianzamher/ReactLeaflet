@@ -47,7 +47,7 @@ export const Header = () => {
               color="secondary"
               name="Jason Hughes"
               size="sm"
-              src="src\assets\tango001.webp"
+              src="https://imgs.search.brave.com/HZTzT4hztPp3ddCwh8Cty8pS5Q4BLpIv-forUtQrXXw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9mbHlj/bGlwYXJ0LmNvbS90/aHVtYnMvdGFuZ28t/ZGFuY2VyLWNsaXBh/cnQtdHJhbnNwYXJl/bnQtaW1hZ2VzLWJh/bGxyb29tLWRhbmNl/LTE1MzAwNzYucG5n"
             />
           </DropdownTrigger>
           <DropdownMenu aria-label="Profile Actions" variant="flat">
