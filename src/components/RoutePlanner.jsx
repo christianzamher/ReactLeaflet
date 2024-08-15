@@ -83,10 +83,10 @@ export const RoutePlanner = () => {
               </div>
             ))} */}
 
-      <div className="relative w-full h-screen z-50">
-        {" "}
+      <div className="relative w-full h-screen z-50 bg-white shadow-md ">
+       
         {/* Contenedor principal con posición relativa y tamaño completo de la pantalla */}
-        <div className="absolute inset-0 flex flex-col md:flex-row z-20">
+        <div className="absolute inset-0 flex flex-col md:flex-row z-20 rounded-xl shadow-lg">
           {" "}
           {/* Contenedor interno con posición absoluta, cubriendo todo el espacio del contenedor principal, y usando flex para organizar hijos */}
           <div className="w-full md:w-3/4 h-full z-30">
@@ -111,23 +111,24 @@ export const RoutePlanner = () => {
               <MapComponent center={startLocation} />
             </MapContainer>
           </div>
-          <div className="w-full md:w-1/4 h-full overflow-y-scroll px-4 pt-24 z-10">
+          <div className="w-full md:w-1/4 h-full overflow-y-scroll px-4 pt-8 z-10 border-2">
             {" "}
             {/* Sección de información de ruta, ocupando un cuarto del ancho y toda la altura disponible */}
             {/* Información de Ruta  */}
-            <h2 className="text-xl font-semibold mb-4">Informacion de Ruta:</h2>
-            <p className="mb-2">
+            <h2 className="text-xl font-semibold mb-4 border-2 rounded-lg ">Informacion de Ruta:</h2>
+            <p className="mb-2 border-2 rounded-lg">
               <strong>Distancia del Recorrido:</strong> {routeInfo.distance}{" "}
               Mts.
             </p>
-            <p className="mb-2">
+            <p className="mb-2 border-2 rounded-lg">
               <strong>Puntos intermedios:</strong>
             </p>
             <ul className="list-none pl-5">
               {routeInfo.instructions.map((instruction, index) => (
                 <li key={index} className="flex items-center space-x-2 mb-2 border-b">
                   <span className="flex items-center justify-center w-10 h-10 border rounded-full bg-greenT text-white">
-                    {index + 1}.
+                    {/* {index + 1}. */}
+                  <span class="bg-greenT w-64 h-16 rounded shadow-md"></span>
                   </span>
                   <div>
                     <strong>{instruction.type}</strong>

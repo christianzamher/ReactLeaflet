@@ -5,10 +5,9 @@ import { Icon } from "leaflet";
 import L from "leaflet";
 import Leaflet from "leaflet";
 
-
 export const Markers = () => {
   const [markers, setMarkers] = useState([]);
- 
+
   useEffect(() => {
     const dataMarkers = `https://decamino-back.onrender.com/api/restaurants`;
     axios
@@ -27,7 +26,7 @@ export const Markers = () => {
         console.error(error);
       });
   }, [setMarkers]);
-Leaflet.Icon.Default.imagePath = '/images/'
+  Leaflet.Icon.Default.imagePath = "/images/";
   //  const icon = L.icon({
   //    iconUrl: "src/assets/6copia.png",
   //    iconSize: [38, 40]
@@ -37,7 +36,7 @@ Leaflet.Icon.Default.imagePath = '/images/'
   return (
     <>
       {markers.map((marker, id) => (
-        <Marker key={id} position={marker.location} >
+        <Marker key={id} position={marker.location}>
           <Popup position={marker.location} closeButton={true}>
             <div className="    animated fadeIn faster    left-0  flex justify-center items-center  ">
               <div className="block rounded-lg bg-white">
@@ -47,11 +46,10 @@ Leaflet.Icon.Default.imagePath = '/images/'
                   data-te-ripple-color="light"
                 >
                   <img
-                    className="rounded-lg  sm:m-h-64 md:h-64 w-full"
+                    className="rounded-lg  sm:m-h-32 md:h-32 w-full"
                     src={marker.photos[0]}
                     alt=""
                   />
-                 
                 </div>
 
                 <div className="p-2">
@@ -79,7 +77,6 @@ Leaflet.Icon.Default.imagePath = '/images/'
                     {marker.description}
                   </p>
                 </div>
-              
               </div>
             </div>
           </Popup>
