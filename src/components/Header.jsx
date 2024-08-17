@@ -43,8 +43,8 @@ export const Header = () => {
             <Avatar
               isBordered
               as="button"
-              className="transition-transform"
-              color="secondary"
+              className="transition-transform bg-orange-600"
+              color="succes"
               name="Jason Hughes"
               size="sm"
               src="https://imgs.search.brave.com/HZTzT4hztPp3ddCwh8Cty8pS5Q4BLpIv-forUtQrXXw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9mbHlj/bGlwYXJ0LmNvbS90/aHVtYnMvdGFuZ28t/ZGFuY2VyLWNsaXBh/cnQtdHJhbnNwYXJl/bnQtaW1hZ2VzLWJh/bGxyb29tLWRhbmNl/LTE1MzAwNzYucG5n"
@@ -52,16 +52,29 @@ export const Header = () => {
           </DropdownTrigger>
           <DropdownMenu aria-label="Profile Actions" variant="flat">
             <DropdownItem key="profile" className="h-14 gap-2 ">
-              <p className="font-semibold text-orange-700 ">Bienvenido</p>
+              <p className=" text-orange-700 ">Bienvenido</p>
+            </DropdownItem>
+            <DropdownItem key="profile">
+              <Link href="/">
+                <p className=" text-black ">Mapa</p>
+              </Link>
             </DropdownItem>
             <DropdownItem key="settings">
-              <Link href="/home">
+              <Link href="/equipo">
                 <p className="text-black ">Equipo</p>
               </Link>
             </DropdownItem>
-            <DropdownItem key="team_settings">Configuracion</DropdownItem>
-            <DropdownItem key="analytics">Acerca de La Ruta</DropdownItem>
-            
+            <DropdownItem key="team_settings">
+              <Link>
+                <p className="text-black ">Configuracion</p>
+              </Link>
+            </DropdownItem>
+            <DropdownItem key="analytics">
+              <Link href="/larutadeltango">
+                <p className="text-black ">Acerca de La Ruta </p>
+              </Link>
+            </DropdownItem>
+
             {/* <DropdownItem key="logout" color="danger">
               Log Out
             </DropdownItem> */}
