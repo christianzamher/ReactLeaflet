@@ -4,14 +4,14 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Link,
+  
   DropdownItem,
   DropdownTrigger,
   Dropdown,
   DropdownMenu,
   Avatar,
 } from "@nextui-org/react";
-// import { Link } from "react-router-dom";
+ import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -20,9 +20,9 @@ export const Header = () => {
         <p className="font-bold text-inherit text-white">La Ruta del Tango</p>
       </NavbarBrand>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      {/* <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link className="text-white" href="/equipo">
+          <Link className="text-white" to="/equipo">
             Sobre Mí
           </Link>
         </NavbarItem>
@@ -36,7 +36,7 @@ export const Header = () => {
             Configuracion
           </Link>
         </NavbarItem>
-      </NavbarContent>
+      </NavbarContent> */}
 
       <NavbarContent as="div" justify="end">
         <Dropdown placement="bottom-end">
@@ -52,27 +52,27 @@ export const Header = () => {
             />
           </DropdownTrigger>
           <DropdownMenu aria-label="Profile Actions" variant="flat">
-            <DropdownItem key="profile" className="h-14 gap-2 ">
+            <DropdownItem  className="h-14 gap-2 ">
               <p className=" text-orange-700 ">Bienvenido</p>
             </DropdownItem>
             <DropdownItem key="profile">
-              <Link href="/">
+              <Link to={"/"}>
                 <p className=" text-black ">Mapa</p>
               </Link>
             </DropdownItem>
-            <DropdownItem key="settings">
-              <Link href="/equipo">
+            <DropdownItem>
+              <Link to={"/equipo"}>
                 <p className="text-black ">Equipo</p>
               </Link>
             </DropdownItem>
-            <DropdownItem key="team_settings">
+            <DropdownItem >
               <Link>
                 <p className="text-black ">Configuracion</p>
               </Link>
             </DropdownItem>
-            <DropdownItem key="analytics">
-              <Link href="/ruta">
-                <p className="text-black ">Acerca de La Ruta </p>
+            <DropdownItem >
+              <Link to={"/ruta"} className="text-black ">Acerca de La Ruta
+                <p > </p>
               </Link>
             </DropdownItem>
 
