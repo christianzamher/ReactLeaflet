@@ -4,8 +4,8 @@ import { Landing_Page } from "./Pages/LandingPage/Landing_Page.View";
 import { RoutePlanner } from "./components/RoutePlanner";
 import { Header } from "./components/Header";
 import { Footer } from "./components/UI/Footer";
-import { About } from "./components/UI/About";
-import { AboutRuta } from "./components/UI/AboutRuta";
+import { About } from "./components/About";
+import { AboutRuta } from "./components/AboutRuta";
 
 function App() {
   return (

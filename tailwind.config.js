@@ -29,3 +29,10 @@ export default {
   plugins: [nextui()]
 }
 
+// module.exports = {
+
+//   plugins: [
+//       require('flowbite/plugin')
+//   ]
+
+// }
