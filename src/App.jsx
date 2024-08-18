@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<RoutePlanner />}></Route>
         <Route path="/equipo" element={<About />}></Route>
-        <Route path="/larutadeltango" element={<AboutRuta />}></Route>
+        <Route path="/ruta" element={<AboutRuta />}></Route>
 
         {/* <Route path="/*" element={<Navigate to="/Home" />} /> */}
       </Routes>
