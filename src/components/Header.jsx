@@ -4,14 +4,14 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  
+  Link,
   DropdownItem,
   DropdownTrigger,
   Dropdown,
   DropdownMenu,
   Avatar,
 } from "@nextui-org/react";
- import { Link } from "react-router-dom";
+//  import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -20,14 +20,14 @@ export const Header = () => {
         <p className="font-bold text-inherit text-white">La Ruta del Tango</p>
       </NavbarBrand>
 
-      {/* <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link className="text-white" to="/equipo">
+          <Link className="text-white" href="/equipo">
             Sobre Mí
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
-          <Link href="#" aria-current="page" color="secondary">
+          <Link href="/ruta" aria-current="page" color="secondary">
             Customers
           </Link>
         </NavbarItem>
@@ -36,7 +36,7 @@ export const Header = () => {
             Configuracion
           </Link>
         </NavbarItem>
-      </NavbarContent> */}
+      </NavbarContent>
 
       <NavbarContent as="div" justify="end">
         <Dropdown placement="bottom-end">
