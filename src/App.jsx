@@ -11,7 +11,7 @@ import { Route, Routes } from "react-router-dom";
 function App() {
   return (
     <>
-      {/* <Header /> */}
+      <Header /> 
       <Routes>
         <Route path="/" element={<RoutePlanner />}/>
         <Route path="equipo" element={<About />}/>
