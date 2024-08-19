@@ -6,11 +6,12 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/UI/Footer";
 import { About } from "./components/About";
 import { AboutRuta } from "./components/AboutRuta";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Routes>
         <Route path="/" element={<RoutePlanner />}/>
         <Route path="equipo" element={<About />}/>

@@ -52,7 +52,7 @@ export const Header = () => {
             />
           </DropdownTrigger>
           <DropdownMenu aria-label="Profile Actions" variant="flat">
-            {/* <DropdownItem  className="h-14 gap-2 ">
+            <DropdownItem  className="h-14 gap-2 ">
               <p className=" text-orange-700 ">Bienvenido</p>
             </DropdownItem>
             <DropdownItem key="/">
@@ -61,7 +61,7 @@ export const Header = () => {
               </Link>
             </DropdownItem>
             <DropdownItem>
-              <Link href={"/equipo"}>
+              <Link href="/equipo">
                 <p className="text-black ">Equipo</p>
               </Link>
             </DropdownItem>
@@ -71,16 +71,11 @@ export const Header = () => {
               </Link>
             </DropdownItem>
             <DropdownItem >
-              <Link href={"/ruta"} className="text-black ">Acerca de La Ruta
-                <p > </p>
+              <Link href="/ruta" className="text-black ">
+                <p>Acerca de La Ruta</p>
               </Link>
-            </DropdownItem> */}
-            <DropdownItem key="/">My Settings</DropdownItem>
-            <DropdownItem key="/equipo">
-            <a href="/equipo">Equipo </a>
             </DropdownItem>
-            <DropdownItem key="configuracion">Configuracion</DropdownItem>
-            <DropdownItem key="ruta">Acerca de La Ruta</DropdownItem>
+         
          
 
             {/* <DropdownItem key="logout" color="danger">
