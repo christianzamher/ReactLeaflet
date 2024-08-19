@@ -14,8 +14,8 @@ function App() {
       <Header /> 
       <Routes>
         <Route path="/" element={<RoutePlanner />}/>
-        <Route path="equipo" element={<About />}/>
-        <Route path="ruta" element={<AboutRuta />}/>
+        <Route path="/equipo" element={<About />}/>
+        <Route path="/ruta" element={<AboutRuta />}/>
 
         {/* <Route path="/*" element={<Navigate to="/Home" />} /> */}
       </Routes>
