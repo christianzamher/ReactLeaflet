@@ -20,7 +20,7 @@ export const Footer = () => {
                 </li>
               
                 <li>
-                  <a href="https://czam.vercel.app/" className="hover:text-sky-400 transition">
+                  <a href="https://czam.vercel.app/" className="hover:text-sky-400 transition" target="_blank">
                     Contact
                   </a>
                 </li>
@@ -30,7 +30,7 @@ export const Footer = () => {
               <ul role="list" className="space-y-8">
                 <li>
                   <a
-                    href="https://github.com/christianzamher"
+                    href="https://github.com/christianzamher" target="_blank"
                     className="flex items-center space-x-3 hover:text-sky-400 transition"
                   >
                    <img

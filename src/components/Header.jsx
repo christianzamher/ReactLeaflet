@@ -61,7 +61,11 @@ export const Header = () => {
             </DropdownItem>
             <DropdownItem>
               <Link to="/" className="flex">
-              <p className="w-5 h-5"><TbMapSearch /></p>
+              <img
+                        className="w-5 h-5"
+                        src="mapas.png"
+                        alt="map icon"
+                      />
                 <p className="text-black flex pl-1 ">Mapa</p>
               </Link>
             </DropdownItem>
@@ -71,9 +75,11 @@ export const Header = () => {
                 target="_blank"
                 className="flex"
               >
-                <p className="w-5 h-5">
-                <FaGithub />
-                </p>
+                <img
+                        className="w-5 h-5"
+                        src="github.png"
+                        alt="github icon"
+                      />
                 <p className="text-black flex pl-1">GitHub</p>
               </Link>
             </DropdownItem>
@@ -83,9 +89,11 @@ export const Header = () => {
                 target="_blank"
                 className="flex  "
               >
-                <p className="w-5 h-5">
-                <FaLinkedin />
-                </p>
+                <img
+                        className="w-5 h-5"
+                        src="linkedin.png"
+                        alt="linkedin icon"
+                      />
                 <p className="text-black pl-1  "> Linkedin</p>
               </Link>
             </DropdownItem>
@@ -96,9 +104,11 @@ export const Header = () => {
                 target="_blank"
                 className=" flex"
               >
-               <p className="w-5 h-5">
-               <CgWebsite />
-                </p>
+               <img
+                        className="w-5 h-5"
+                        src="web-browser.png"
+                        alt="portfolio icon"
+                      />
                 <p className="text-black pl-1">Portfolio</p>
               </Link>
             </DropdownItem>
