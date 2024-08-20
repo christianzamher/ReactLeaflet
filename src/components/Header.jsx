@@ -12,34 +12,14 @@ import {
   Avatar,
 } from "@nextui-org/react";
 import { Link } from "react-router-dom";
-import { FaLinkedin , FaGithub } from "react-icons/fa";
-import { CgWebsite } from "react-icons/cg";
-import { TbMapSearch } from "react-icons/tb"
+
 
 export const Header = () => {
   return (
     <Navbar className="w-full bg-[#0a1200]/90 z-[9000]">
       <NavbarBrand>
-        <p className="font-bold text-inherit text-white">La Ruta del Tango</p>
+        <p className="font-bold text-inherit text-white">Leaflet Maps</p>
       </NavbarBrand>
-
-      {/* <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link className="text-white" to="/equipo">
-            Sobre Mí
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link to="/ruta" aria-current="page" className="text-secondary">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <NextUILink className="text-white" href="#">
-            Configuracion
-          </NextUILink>
-        </NavbarItem>
-      </NavbarContent> */}
 
       <NavbarContent as="div" justify="end">
         <Dropdown placement="bottom-end">
@@ -61,11 +41,7 @@ export const Header = () => {
             </DropdownItem>
             <DropdownItem>
               <Link to="/" className="flex">
-              <img
-                        className="w-5 h-5"
-                        src="mapas.png"
-                        alt="map icon"
-                      />
+                <img className="w-5 h-5" src="mapas.png" alt="map icon" />
                 <p className="text-black flex pl-1 ">Mapa</p>
               </Link>
             </DropdownItem>
@@ -75,11 +51,7 @@ export const Header = () => {
                 target="_blank"
                 className="flex"
               >
-                <img
-                        className="w-5 h-5"
-                        src="github.png"
-                        alt="github icon"
-                      />
+                <img className="w-5 h-5" src="github.png" alt="github icon" />
                 <p className="text-black flex pl-1">GitHub</p>
               </Link>
             </DropdownItem>
@@ -90,10 +62,10 @@ export const Header = () => {
                 className="flex  "
               >
                 <img
-                        className="w-5 h-5"
-                        src="linkedin.png"
-                        alt="linkedin icon"
-                      />
+                  className="w-5 h-5"
+                  src="linkedin.png"
+                  alt="linkedin icon"
+                />
                 <p className="text-black pl-1  "> Linkedin</p>
               </Link>
             </DropdownItem>
@@ -104,11 +76,11 @@ export const Header = () => {
                 target="_blank"
                 className=" flex"
               >
-               <img
-                        className="w-5 h-5"
-                        src="web-browser.png"
-                        alt="portfolio icon"
-                      />
+                <img
+                  className="w-5 h-5"
+                  src="web-browser.png"
+                  alt="portfolio icon"
+                />
                 <p className="text-black pl-1">Portfolio</p>
               </Link>
             </DropdownItem>

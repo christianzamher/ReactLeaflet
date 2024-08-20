@@ -6,6 +6,7 @@ import { MapComponent } from "./MapComponent";
 import { CustomMap } from "./CustomMap";
 import { LeafletRouting } from "./LeafletRuting";
 import { Markers } from "./Markers";
+import { LocateControl } from "./Locate";
 import "leaflet-routing-machine";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -84,7 +85,6 @@ export const RoutePlanner = () => {
             ))} */}
 
       <div className="relative w-full h-screen z-50 bg-white shadow-md ">
-       
         {/* Contenedor principal con posición relativa y tamaño completo de la pantalla */}
         <div className="absolute inset-0 flex flex-col md:flex-row z-20 rounded-xl shadow-lg">
           {" "}
@@ -97,6 +97,12 @@ export const RoutePlanner = () => {
               zoom={13}
               style={{ width: "100%", height: "100%" }}
             >
+              <LocateControl
+                options={{
+                  position: "bottomleft",
+                  strings: { title: "Mostrar mi ubicación" },
+                }}
+              />
               <CustomMap control={routingControl} />
               <Markers />
               <LeafletRouting
@@ -115,7 +121,9 @@ export const RoutePlanner = () => {
             {" "}
             {/* Sección de información de ruta, ocupando un cuarto del ancho y toda la altura disponible */}
             {/* Información de Ruta  */}
-            <h2 className="text-xl font-semibold mb-4 border-2 rounded-lg ">Informacion de Ruta:</h2>
+            <h2 className="text-xl font-semibold mb-4 border-2 rounded-lg ">
+              Informacion de Ruta:
+            </h2>
             <p className="mb-2 border-2 rounded-lg">
               <strong>Distancia del Recorrido:</strong> {routeInfo.distance}{" "}
               Mts.
@@ -125,10 +133,13 @@ export const RoutePlanner = () => {
             </p>
             <ul className="list-none pl-5">
               {routeInfo.instructions.map((instruction, index) => (
-                <li key={index} className="flex items-center space-x-2 mb-2 border-b">
+                <li
+                  key={index}
+                  className="flex items-center space-x-2 mb-2 border-b"
+                >
                   <span className="flex items-center justify-center w-10 h-10 border rounded-full bg-greenT text-white">
                     {/* {index + 1}. */}
-                  <span class="bg-greenT w-64 h-16 rounded shadow-md"></span>
+                    <span class="bg-greenT w-64 h-16 rounded shadow-md"></span>
                   </span>
                   <div>
                     <strong>{instruction.type}</strong>
