@@ -31,7 +31,7 @@ export const Header = () => {
               color="success"
               name="Jason Hughes"
               size="sm"
-              src="https://imgs.search.brave.com/HZTzT4hztPp3ddCwh8Cty8pS5Q4BLpIv-forUtQrXXw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9mbHlj/bGlwYXJ0LmNvbS90/aHVtYnMvdGFuZ28t/ZGFuY2VyLWNsaXBh/cnQtdHJhbnNwYXJl/bnQtaW1hZ2VzLWJh/bGxyb29tLWRhbmNl/LTE1MzAwNzYucG5n"
+              src="maps-and-location.png"
               alt="User Avatar"
             />
           </DropdownTrigger>
