@@ -20,7 +20,7 @@ export const Header = () => {
         <p className="font-bold text-inherit text-white">La Ruta del Tango</p>
       </NavbarBrand>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      {/* <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
           <Link className="text-white" to="/equipo">
             Sobre Mí
@@ -36,7 +36,7 @@ export const Header = () => {
             Configuracion
           </NextUILink>
         </NavbarItem>
-      </NavbarContent>
+      </NavbarContent> */}
 
       <NavbarContent as="div" justify="end">
         <Dropdown placement="bottom-end">
@@ -57,23 +57,45 @@ export const Header = () => {
               <p className="text-orange-700">Bienvenido</p>
             </DropdownItem>
             <DropdownItem>
-              <Link to="/">
-                <p className="text-black">Mapa</p>
+              <Link to="/" className="flex">
+                <img
+                  className="w-5 h-5"
+                  src="src\assets\mapas.png"
+                  alt="map icon"
+                />
+                <p className="text-black flex pl-1 ">Mapa</p>
               </Link>
             </DropdownItem>
             <DropdownItem>
-              <Link to="/equipo">
-                <p className="text-black">Equipo</p>
+              <Link to="https://github.com/christianzamher" target="_blank"  className="flex">
+
+                <img
+                  className="w-5 h-5"
+                  src="src\assets\github.png"
+                  alt="github icon"
+                />
+                <p className="text-black flex pl-1">GitHub</p>
               </Link>
             </DropdownItem>
             <DropdownItem>
-              <NextUILink href="#">
-                <p className="text-black">Configuracion</p>
-              </NextUILink>
+              <Link to="https://www.linkedin.com/in/christianzamorahermida" target="_blank" className="flex ">
+              <img
+                    className="w-5 h-5"
+                    src="src\assets\linkedin.png"
+                    alt="linkedin icon"
+                  />
+                <p className="text-black pl-1">Linkedin</p>
+              </Link>
             </DropdownItem>
+
             <DropdownItem>
-              <Link to="/ruta" className="text-black">
-                <p>Acerca de La Ruta</p>
+              <Link to="https://czam.vercel.app/" target="_blank" className=" flex" >
+              <img
+                    className="w-5 h-5"
+                    src="src\assets\web-browser.png"
+                    alt="web icon"
+                  />
+                <p className="text-black pl-1">Portfolio</p>
               </Link>
             </DropdownItem>
           </DropdownMenu>
