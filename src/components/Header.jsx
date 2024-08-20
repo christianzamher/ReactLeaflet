@@ -60,7 +60,7 @@ export const Header = () => {
               <Link to="/" className="flex">
                 <img
                   className="w-5 h-5"
-                  src="src\assets\mapas.png"
+                  src="src/assets/mapas.png"
                   alt="map icon"
                 />
                 <p className="text-black flex pl-1 ">Mapa</p>
@@ -71,7 +71,7 @@ export const Header = () => {
 
                 <img
                   className="w-5 h-5"
-                  src="src\assets\github.png"
+                  src="src/assets/github.png"
                   alt="github icon"
                 />
                 <p className="text-black flex pl-1">GitHub</p>
@@ -81,7 +81,7 @@ export const Header = () => {
               <Link to="https://www.linkedin.com/in/christianzamorahermida" target="_blank" className="flex ">
               <img
                     className="w-5 h-5"
-                    src="src\assets\linkedin.png"
+                    src="src/assets/linkedin.png"
                     alt="linkedin icon"
                   />
                 <p className="text-black pl-1">Linkedin</p>
@@ -92,7 +92,7 @@ export const Header = () => {
               <Link to="https://czam.vercel.app/" target="_blank" className=" flex" >
               <img
                     className="w-5 h-5"
-                    src="src\assets\web-browser.png"
+                    src="src/assets/web-browser.png"
                     alt="web icon"
                   />
                 <p className="text-black pl-1">Portfolio</p>
