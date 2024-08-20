@@ -12,6 +12,7 @@ import {
   Avatar,
 } from "@nextui-org/react";
 import { Link } from "react-router-dom";
+import { FaLinkedin } from "react-icons/fa";
 
 export const Header = () => {
   return (
@@ -71,20 +72,17 @@ export const Header = () => {
 
                 <img
                   className="w-5 h-5"
-                  src="src/assets/github.png"
+                  src="assets/github.png"
                   alt="github icon"
                 />
                 <p className="text-black flex pl-1">GitHub</p>
               </Link>
             </DropdownItem>
             <DropdownItem>
-              <Link to="https://www.linkedin.com/in/christianzamorahermida" target="_blank" className="flex ">
-              <img
-                    className="w-5 h-5"
-                    src="src/assets/linkedin.png"
-                    alt="linkedin icon"
-                  />
-                <p className="text-black pl-1">Linkedin</p>
+              <Link to="https://www.linkedin.com/in/christianzamorahermida" target="_blank" className="flex  ">
+             
+                  <p  className="w-5 h-5"><FaLinkedin /></p>
+                <p className="text-black pl-1  "> Linkedin</p>
               </Link>
             </DropdownItem>
 
