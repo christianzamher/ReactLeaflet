@@ -35,7 +35,7 @@ export const Footer = () => {
                   >
                    <img
                         className="w-5 h-5"
-                        src="src/assets/github.png"
+                        src="github.png"
                         alt="github icon"
                       />
                     <span>Github</span>
@@ -49,7 +49,7 @@ export const Footer = () => {
                   >
                     <img
                         className="w-5 h-5"
-                        src="src/assets/linkedin.png"
+                        src="linkedin.png"
                         alt="patreon icon"
                       />
                    
