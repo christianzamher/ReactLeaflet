@@ -8,36 +8,47 @@ import Leaflet from "leaflet";
 export const Markers = () => {
   const [markers, setMarkers] = useState([]);
 
-  useEffect(() => {
-    const dataMarkers = `https://decamino-back.onrender.com/api/restaurants`;
-    axios
-      .get(dataMarkers)
-      .then((response) => {
-        const dataRes = response.data;
-        const filteredData = dataRes.filter(
-          (marker) =>
-            marker.location &&
-            Array.isArray(marker.location) &&
-            marker.location.length === 2
-        );
-        setMarkers(filteredData);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [setMarkers]);
-  Leaflet.Icon.Default.imagePath = "/images/";
-  //  const icon = L.icon({
-  //    iconUrl: "src/assets/6copia.png",
-  //    iconSize: [38, 40]
-  //  });
+  // useEffect(() => {
+  //   const dataMarkers = `https://decamino-back.onrender.com/api/restaurants`;
+  //   axios
+  //     .get(dataMarkers)
+  //     .then((response) => {
+  //       const dataRes = response.data;
+  //       const filteredData = dataRes.filter(
+  //         (marker) =>
+  //           marker.location &&
+  //           Array.isArray(marker.location) &&
+  //           marker.location.length === 2
+  //       );
+  //       setMarkers(filteredData);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }, [setMarkers]);
 
-  // L.Marker.prototype.options.icon = icon;
+  useEffect(() => {
+    // Realizar la consulta a la API de Nominatim para obtener restaurantes en Buenos Aires
+    axios.get('https://nominatim.openstreetmap.org/search', {
+      params: {
+        country: 'Argentina ',
+        amenity: 'bar  ', 
+         
+        format: 'json'
+      }
+    }).then(response => {
+      setMarkers(response.data);
+    }).catch(error => {
+      console.error('Error al obtener los datos:', error);
+    });
+  }, []);
+  Leaflet.Icon.Default.imagePath = "/images/";
+ 
   return (
     <>
       {markers.map((marker, id) => (
-        <Marker key={id} position={marker.location}>
-          <Popup position={marker.location} closeButton={true}>
+        <Marker key={id} position={[marker.lat, marker.lon]}>
+          <Popup position={[marker.lat, marker.lon]}  closeButton={true}>
             <div className="    animated fadeIn faster    left-0  flex justify-center items-center  ">
               <div className="block rounded-lg bg-white">
                 <div
@@ -45,17 +56,17 @@ export const Markers = () => {
                   data-te-ripple-init
                   data-te-ripple-color="light"
                 >
-                  <img
+                  {/* <img
                     className="rounded-lg  sm:m-h-32 md:h-32 w-full"
                     src={marker.photos[0]}
                     alt=""
-                  />
+                  /> */}
                 </div>
 
                 <div className="p-2">
                   <div className="flex justify-between">
                     <h5 className="mb-2 text-sm font-bold leading-tight text-neutral-800 dark:text-neutral-50">
-                      {marker.title}
+                      {marker.display_name}
                     </h5>
                     <h5 className="mb-2 text-sm font-bold leading-tight text-neutral-800 dark:text-neutral-50 flex">
                       5.0{" "}
@@ -74,7 +85,11 @@ export const Markers = () => {
                     </h5>
                   </div>
                   <p className="mb-1 text-sm text-neutral-600 dark:text-neutral-200">
-                    {marker.description}
+                    {marker.adress}
+                  </p>
+                  <br />
+                  <p className="mb-1 text-sm text-neutral-600 dark:text-neutral-200">
+                    {marker.street}
                   </p>
                 </div>
               </div>

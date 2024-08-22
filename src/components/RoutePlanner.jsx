@@ -98,10 +98,10 @@ export const RoutePlanner = () => {
               style={{ width: "100%", height: "100%" }}
             >
               <LocateControl
-                options={{
-                  position: "bottomleft",
-                  strings: { title: "Mostrar mi ubicación" },
-                }}
+                // options={{
+                //   position: "topleft",
+                //   strings: { title: "Mostrar mi ubicación" },
+                // }}
               />
               <CustomMap control={routingControl} />
               <Markers />

@@ -10,7 +10,7 @@ export const About = () => {
     <div className="grid grid-cols-12 gap-5 items-center">
       <div className="col-span-12 lg:col-span-4">
         <div>
-          <img src="https://cdn.easyfrontend.com/pictures/hero/hero-10.png" alt="" className="max-w-full h-auto" />
+          <img src="DeCaminoCirculo.png" alt="" className="max-w-full h-auto" />
         </div>
       </div>
       <div className="col-span-12 md:col-span-6 lg:col-span-4">
