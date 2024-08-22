@@ -70,11 +70,11 @@ export const LeafletRouting = ({
     });
     console.log(waypointsFromControl);
 
-    return () => {
-      if (controlRef.current) {
-        controlRef.current._map.removeControl(controlRef.current);
-      }
-    };
+    // return () => {
+    //   if (controlRef.current) {
+    //     controlRef.current._map.removeControl(controlRef.current);
+    //   }
+    // };
   }, []);
 
   return null;
