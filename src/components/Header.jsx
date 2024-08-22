@@ -84,6 +84,21 @@ export const Header = () => {
                 <p className="text-black pl-1">Portfolio</p>
               </Link>
             </DropdownItem>
+            <DropdownItem>
+              <Link
+                to="/about"
+                
+                
+                className="flex  "
+              >
+                <img
+                  className="w-5 h-5"
+                  src="linkedin.png"
+                  alt="linkedin icon"
+                />
+                <p className="text-black pl-1  "> Linkedin</p>
+              </Link>
+            </DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </NavbarContent>

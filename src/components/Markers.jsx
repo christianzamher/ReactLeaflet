@@ -29,26 +29,29 @@ export const Markers = () => {
 
   useEffect(() => {
     // Realizar la consulta a la API de Nominatim para obtener restaurantes en Buenos Aires
-    axios.get('https://nominatim.openstreetmap.org/search', {
-      params: {
-        country: 'Argentina ',
-        amenity: 'bar  ', 
-         
-        format: 'json'
-      }
-    }).then(response => {
-      setMarkers(response.data);
-    }).catch(error => {
-      console.error('Error al obtener los datos:', error);
-    });
+    axios
+      .get("https://nominatim.openstreetmap.org/search", {
+        params: {
+          country: "Argentina ",
+          amenity: "bar  ",
+
+          format: "json",
+        },
+      })
+      .then((response) => {
+        setMarkers(response.data);
+      })
+      .catch((error) => {
+        console.error("Error al obtener los datos:", error);
+      });
   }, []);
   Leaflet.Icon.Default.imagePath = "/images/";
- 
+
   return (
     <>
       {markers.map((marker, id) => (
         <Marker key={id} position={[marker.lat, marker.lon]}>
-          <Popup position={[marker.lat, marker.lon]}  closeButton={true}>
+          <Popup position={[marker.lat, marker.lon]} closeButton={true}>
             <div className="    animated fadeIn faster    left-0  flex justify-center items-center  ">
               <div className="block rounded-lg bg-white">
                 <div
@@ -65,10 +68,11 @@ export const Markers = () => {
 
                 <div className="p-2">
                   <div className="flex justify-between">
-                    <h5 className="mb-2 text-sm font-bold leading-tight text-neutral-800 dark:text-neutral-50">
+                    {/* <h5 className="mb-2 text-sm font-bold leading-tight text-neutral-800 dark:text-neutral-50">{marker.name}</h5> */}
+                    <h4 className="mb-2 text-sm font-bold leading-tight text-neutral-800 dark:text-neutral-50">
                       {marker.display_name}
-                    </h5>
-                    <h5 className="mb-2 text-sm font-bold leading-tight text-neutral-800 dark:text-neutral-50 flex">
+                    </h4>
+                    <h3 className="mb-2 text-sm font-bold leading-tight text-neutral-800 dark:text-neutral-50 flex">
                       5.0{" "}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +86,7 @@ export const Markers = () => {
                           clipRule="evenodd"
                         />
                       </svg>
-                    </h5>
+                    </h3>
                   </div>
                   <p className="mb-1 text-sm text-neutral-600 dark:text-neutral-200">
                     {marker.adress}
