@@ -86,6 +86,21 @@ export const Header = () => {
             </DropdownItem>
             <DropdownItem>
               <Link
+                to="/instructions"
+                
+                
+                className="flex  "
+              >
+                <img
+                  className="w-5 h-5"
+                  src="user-guide.png"
+                  alt="argentina icon"
+                />
+                <p className="text-black pl-1  ">Guia</p>
+              </Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link
                 to="/about"
                 
                 
@@ -93,10 +108,10 @@ export const Header = () => {
               >
                 <img
                   className="w-5 h-5"
-                  src="linkedin.png"
-                  alt="linkedin icon"
+                  src="argentina.png"
+                  alt="argentina icon"
                 />
-                <p className="text-black pl-1  "> Linkedin</p>
+                <p className="text-black pl-1  ">Acerca de..</p>
               </Link>
             </DropdownItem>
           </DropdownMenu>

@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<RoutePlanner />} />
           <Route path="/about" element={<About />} />
-          <Route path="/ruta" element={<AboutRuta />} />
+          <Route path="/instructions" element={<AboutRuta />} />
           <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
