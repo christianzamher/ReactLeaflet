@@ -100,41 +100,7 @@ export const AboutRuta = () => {
             {/* <!-- contents --> */}
             <div className="col-span-12 md:col-span-8 md:col-start-3">
               <hr className="bg-slate-300 my-6 lg:my-12" />
-              {/* <!-- social icons --> */}
-              <ul className="flex justify-center items-center">
-                <li>
-                  <a
-                    href="#"
-                    className="text-[15px] opacity-90 transition duration-500 border rounded-md px-4 py-3 my-1 mr-2 hover:text-blue-600"
-                  >
-                    <i className="fas fa-clone mr-2"></i> Copy Link
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-[15px] opacity-90 transition duration-500 border rounded-md px-4 py-3 my-1 mr-2 hover:text-blue-600"
-                  >
-                    <i className="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-[15px] opacity-90 transition duration-500 border rounded-md px-4 py-3 my-1 mr-2 hover:text-blue-600"
-                  >
-                    <i className="fab fa-facebook"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-[15px] opacity-90 transition duration-500 border rounded-md px-4 py-3 my-1 hover:text-blue-600"
-                  >
-                    <i className="fab fa-vimeo"></i>
-                  </a>
-                </li>
-              </ul>
+             
             </div>
           </div>
         </div>

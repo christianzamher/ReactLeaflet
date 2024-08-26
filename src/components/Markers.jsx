@@ -33,7 +33,7 @@ export const Markers = () => {
       .get("https://nominatim.openstreetmap.org/search", {
         params: {
           country: "Argentina ",
-          amenity: "bar  ",
+          amenity: "city",
 
           format: "json",
         },

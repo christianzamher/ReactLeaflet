@@ -13,12 +13,11 @@ import {
 } from "@nextui-org/react";
 import { Link } from "react-router-dom";
 
-
 export const Header = () => {
   return (
     <Navbar className="w-full bg-[#0a1200]/90 z-[9000]">
       <NavbarBrand>
-        <p className="font-bold text-inherit text-white">Leaflet Maps</p>
+        <p className="font-bold text-inherit text-white">DeCamino Maps</p>
       </NavbarBrand>
 
       <NavbarContent as="div" justify="end">
@@ -31,7 +30,7 @@ export const Header = () => {
               color="success"
               name="Jason Hughes"
               size="sm"
-              src="maps-and-location.png"
+              src="DeCaminoCirculo.png"
               alt="User Avatar"
             />
           </DropdownTrigger>
@@ -45,6 +44,27 @@ export const Header = () => {
                 <p className="text-black flex pl-1 ">Mapa</p>
               </Link>
             </DropdownItem>
+            <DropdownItem>
+              <Link to="/instructions" className="flex  ">
+                <img
+                  className="w-5 h-5"
+                  src="user-guide.png"
+                  alt="argentina icon"
+                />
+                <p className="text-black pl-1  ">Guia</p>
+              </Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/about" className="flex  ">
+                <img
+                  className="w-5 h-5"
+                  src="argentina.png"
+                  alt="argentina icon"
+                />
+                <p className="text-black pl-1  ">Acerca de..</p>
+              </Link>
+            </DropdownItem>
+          
             <DropdownItem>
               <Link
                 to="https://github.com/christianzamher"
@@ -82,36 +102,6 @@ export const Header = () => {
                   alt="portfolio icon"
                 />
                 <p className="text-black pl-1">Portfolio</p>
-              </Link>
-            </DropdownItem>
-            <DropdownItem>
-              <Link
-                to="/instructions"
-                
-                
-                className="flex  "
-              >
-                <img
-                  className="w-5 h-5"
-                  src="user-guide.png"
-                  alt="argentina icon"
-                />
-                <p className="text-black pl-1  ">Guia</p>
-              </Link>
-            </DropdownItem>
-            <DropdownItem>
-              <Link
-                to="/about"
-                
-                
-                className="flex  "
-              >
-                <img
-                  className="w-5 h-5"
-                  src="argentina.png"
-                  alt="argentina icon"
-                />
-                <p className="text-black pl-1  ">Acerca de..</p>
               </Link>
             </DropdownItem>
           </DropdownMenu>

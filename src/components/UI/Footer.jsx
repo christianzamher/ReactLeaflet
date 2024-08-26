@@ -1,4 +1,4 @@
-import { About } from "../About";
+import { Link } from "react-router-dom";
 export const Footer = () => {
   return (
     <footer className="relative py-20 flex flex-col items-center bg-cyan-900 overflow-hidden md:py-40">
