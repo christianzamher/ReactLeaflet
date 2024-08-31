@@ -70,7 +70,7 @@ export const RoutePlanner = () => {
         <div className="grid gap-6 row-gap-10 lg:grid-cols-2">
           <div className="lg:py-6 lg:pr-16">  */}
       {/* Waypoints */}
-       {/* {childWaypoints.map((wp, index) => (
+      {/* {childWaypoints.map((wp, index) => (
               <div key={index} className="flex items-center space-x-4 mb-6">
                 <div className="flex flex-col items-center">
                   <div className="flex items-center justify-center w-10 h-10 border rounded-full bg-softWood text-white">
@@ -97,12 +97,7 @@ export const RoutePlanner = () => {
               zoom={13}
               style={{ width: "100%", height: "100%" }}
             >
-              <LocateControl
-                // options={{
-                //   position: "topleft",
-                //   strings: { title: "Mostrar mi ubicación" },
-                // }}
-              />
+              <LocateControl />
               <CustomMap control={routingControl} />
               <Markers />
               <LeafletRouting
