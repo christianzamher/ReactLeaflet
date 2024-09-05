@@ -7,7 +7,7 @@ export const MapComponent = ({ center }) => {
   const [position, setPosition] = useState(null);
 
   const map = useMapEvents({
-    dblclick() {
+    click() {
       map.locate();
     },
     locationfound(e) {
