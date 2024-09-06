@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Marker, Popup, useMapEvents } from "react-leaflet";
 import axios from "axios";
 import { Icon } from "leaflet";
-import L from "leaflet";
+
 import Leaflet from "leaflet";
 
 export const Markers = () => {
@@ -45,12 +45,18 @@ export const Markers = () => {
         console.error("Error al obtener los datos:", error);
       });
   }, []);
-  Leaflet.Icon.Default.imagePath = "/images/";
+ // Leaflet.Icon.Default.imagePath = "/images/";
+  // create custom icon
+  const customIcon = new Icon({
+    iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png",
+
+    iconSize: [38, 38], // size of the icon
+  });
 
   return (
     <>
       {markers.map((marker, id) => (
-        <Marker key={id} position={[marker.lat, marker.lon]}>
+        <Marker key={id} position={[marker.lat, marker.lon]} icon={customIcon}>
           <Popup position={[marker.lat, marker.lon]} closeButton={true}>
             <div className="    animated fadeIn faster    left-0  flex justify-center items-center  ">
               <div className="block rounded-lg bg-white">
@@ -59,7 +65,7 @@ export const Markers = () => {
                   data-te-ripple-init
                   data-te-ripple-color="light"
                 >
-                  {/* <img
+                  {/* <img 
                     className="rounded-lg  sm:m-h-32 md:h-32 w-full"
                     src={marker.photos[0]}
                     alt=""
