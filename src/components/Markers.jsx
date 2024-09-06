@@ -48,7 +48,8 @@ export const Markers = () => {
  // Leaflet.Icon.Default.imagePath = "/images/";
   // create custom icon
   const customIcon = new Icon({
-    iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png",
+    iconUrl: "argentina 3.png",
+    
 
     iconSize: [38, 38], // size of the icon
   });
