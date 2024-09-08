@@ -22,8 +22,8 @@ export const About = () => {
                   Acerca de DeCamino
                 </h1>
                 <p className="opacity-75">
-                  DeCamino Maps es la extension de la App
-                  <a href="#">
+                  DeCamino Maps es la extension de la App 
+                  <a href="https://decamino.vercel.app/"> 
                     <b>Decamino</b>
                   </a>
                   realizada para la empresa Igrowker, durante junio y julio del

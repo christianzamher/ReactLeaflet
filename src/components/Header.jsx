@@ -17,7 +17,7 @@ export const Header = () => {
   return (
     <Navbar className="w-full bg-[#0a1200]/90 z-[9000]">
       <NavbarBrand>
-        <p className="font-bold text-inherit text-white">DeCamino Maps</p>
+        <p className="font-bold font-nunito text-2xl md:text-3xl text-inherit text-white">DeCamino Maps</p>
       </NavbarBrand>
 
       <NavbarContent as="div" justify="end">

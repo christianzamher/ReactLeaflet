@@ -9,10 +9,10 @@ export const AboutRuta = () => {
             {/* <!-- heading --> */}
             <div className="col-span-12 md:col-span-8 md:col-start-3 text-center">
               <h1 className="font-bold text-3xl lg:text-[45px] leading-none mb-4">
-                Lorem ipsum dolor sit amet
+                DeCamino Maps Guia 
               </h1>
               <p className="text-lg leading-6 opacity-80 mb-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Instrucciones de uso completo
               </p>
             </div>
             {/* <!-- banner --> */}

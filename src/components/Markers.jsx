@@ -45,7 +45,7 @@ export const Markers = () => {
         console.error("Error al obtener los datos:", error);
       });
   }, []);
- // Leaflet.Icon.Default.imagePath = "/images/";
+ 
   // create custom icon
   const customIcon = new Icon({
     iconUrl: "argentina 3.png",
