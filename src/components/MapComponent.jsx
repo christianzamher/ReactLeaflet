@@ -12,8 +12,8 @@ export const MapComponent = ({ center }) => {
     },
     locationfound(e) {
       setPosition(e.latlng);
-      map.flyTo(e.latlng, map.getZoom());
-      console.log( 'location found  : ',  e)
+      // map.flyTo(e.latlng, map.getZoom());
+      // console.log( 'location found  : ',  e)
     },
   });
 

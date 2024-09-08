@@ -117,7 +117,7 @@ export const RoutePlanner = () => {
             {/* Sección de información de ruta, ocupando un cuarto del ancho y toda la altura disponible */}
             {/* Información de Ruta  */}
             <h2 className="text-xl font-bold mb-4  rounded-lg flex justify-center bg-freshMint  text-gray-50">
-             <img src="argentina2.png" alt="map" className="h-6 w-6  inline-block mr-2" /> Informacion de Ruta
+             <img src="public\favicon_.png" alt="map" className="h-6 w-6  inline-block mr-2" /> Informacion de Ruta
             </h2>
             <p className="mb-2  rounded-lg bg-freshMint  flex justify-center text-gray-50">
               <strong>Distancia del Recorrido:</strong> {routeInfo.distance}{" "}
@@ -130,7 +130,7 @@ export const RoutePlanner = () => {
               {routeInfo.instructions.map((instruction, index) => (
                 <li
                   key={index}
-                  className="flex items-center space-x-2 mb-2 border-b text-gray-50"
+                  className="flex items-center space-x-2 mb-2 border-b border-woodLogo text-gray-50"
                 >
                   <span className="flex items-center justify-center w-10 h-10 border rounded-full bg-greenT text-white">
                     {/* {index + 1}. */}
