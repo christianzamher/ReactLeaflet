@@ -117,7 +117,7 @@ export const RoutePlanner = () => {
             {/* Sección de información de ruta, ocupando un cuarto del ancho y toda la altura disponible */}
             {/* Información de Ruta  */}
             <h2 className="text-xl font-bold mb-4  rounded-lg flex justify-center bg-freshMint  text-gray-50">
-             <img src="public\favicon_.png" alt="map" className="h-6 w-6  inline-block mr-2" /> Informacion de Ruta
+             <img src="favicon_.png" alt="map" className="h-6 w-6  inline-block mr-2" /> Informacion de Ruta
             </h2>
             <p className="mb-2  rounded-lg bg-freshMint  flex justify-center text-gray-50">
               <strong>Distancia del Recorrido:</strong> {routeInfo.distance}{" "}
